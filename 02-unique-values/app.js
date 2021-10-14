@@ -37,3 +37,37 @@ result.innerHTML = categories
     return `<button>${category}</button>`;
   })
   .join('');
+
+
+
+// Convert multiple arrays to single array in an object of array object
+const menu = [
+  {
+    name: "pancakes",
+    category: ["breakfast", "different"],
+  },
+  {
+    name: "burger",
+    category: ["lunch", "different"],
+  },
+  {
+    name: "steak",
+    category: ["dinner", "different"],
+  },
+  {
+    name: "bacon",
+    category: ["breakfast", "different"],
+  },
+  {
+    name: "eggs",
+    category: ["breakfast", "different"],
+  },
+  {
+    name: "pasta",
+    category: ["dinner", "different"],
+  },
+];
+
+const result = menu.map((item) => item.category);
+const merged = [...new Set([].concat.apply([], result))];
+console.log(merged);
